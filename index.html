@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Диана — Ұзату тойы</title>
+<title>50 жас — мерейтой</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +14,8 @@
    ЦВЕТА И ШРИФТЫ
    ============================================================ */
 :root{
-  --rose:#c17086; --rose-deep:#a85a72; --gold:#c9a24b;
-  --ink:#4f4247; --muted:#9b8890; --bg:#fbf5f4; --card:#ffffff;
+  --rose:#e58fa0; --rose-deep:#cf6b81; --gold:#e5b25c; --blue:#7fb4de;
+  --ink:#4f4247; --muted:#9b8890; --bg:#fdf6f2; --card:#ffffff;
   --font-serif:"EB Garamond","Cormorant Garamond",Georgia,serif;
   --font-sans:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --font-names:"Cormorant Garamond","EB Garamond",Georgia,serif;
@@ -25,11 +25,11 @@ html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:var(--font-sans);color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:clip;width:100%;max-width:100%;position:relative}
 /* Фон hero-bg на ВЕСЬ сайт (мягкий), сверху светлая вуаль */
 body::before{content:"";position:fixed;inset:0;z-index:-2;background:url('images/hero-bg.jpg') center top/cover no-repeat;opacity:2.2}
-body::after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(251,245,244,.64),rgba(251,245,244,.82))}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(253,246,242,.66),rgba(253,246,242,.84))}
 img{max-width:100%;display:block}
 
 /* ---------- Переключатель языка ---------- */
-#lang{position:fixed;top:12px;right:12px;z-index:70;display:flex;gap:2px;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border:1px solid #eccfd7;border-radius:999px;padding:3px;box-shadow:0 4px 14px rgba(168,90,114,.18)}
+#lang{position:fixed;top:12px;right:12px;z-index:70;display:flex;gap:2px;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border:1px solid #f2dbe2;border-radius:999px;padding:3px;box-shadow:0 4px 14px rgba(207,107,129,.2)}
 #lang button{border:none;background:none;cursor:pointer;font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--muted);padding:6px 12px;border-radius:999px;transition:all .2s}
 #lang button.active{background:var(--rose);color:#fff}
 [data-lang="kz"] .ru{display:none!important}
@@ -45,10 +45,10 @@ img{max-width:100%;display:block}
 .couple{font-family:var(--font-names);font-style:italic;font-weight:600;font-size:clamp(46px,8.6vw,62px);line-height:1.12;color:var(--rose-deep);word-break:break-word}
 .couple .amp{color:var(--gold);font-style:normal;padding:0 .04em}
 
-/* Кольца-эмблема */
+/* ---------- Эмблема (день рождения) ---------- */
 .rings{display:flex;justify-content:center;padding:14px 0 4px}
-.rings img{width:min(70%,320px);border-radius:16px;box-shadow:0 12px 30px rgba(168,90,114,.18)}
-.rings svg{width:200px;height:auto}
+.rings img{width:min(70%,320px);border-radius:16px;box-shadow:0 12px 30px rgba(207,107,129,.18)}
+.rings svg{width:226px;height:auto}
 
 /* ---------- Орнаментальный разделитель ---------- */
 .divider{display:flex;align-items:center;justify-content:center;gap:12px;max-width:280px;margin:0 auto;padding:2px 0}
@@ -62,14 +62,14 @@ img{max-width:100%;display:block}
 .reveal.in{opacity:1;transform:none}
 
 /* ---------- Календарь ---------- */
-.cal{max-width:340px;margin:0 auto 8px;background:var(--card);border-radius:18px;padding:18px 16px 16px;box-shadow:0 10px 26px rgba(168,90,114,.10);border:1px solid #f0e2e6}
+.cal{max-width:340px;margin:0 auto 8px;background:var(--card);border-radius:18px;padding:18px 16px 16px;box-shadow:0 10px 26px rgba(207,107,129,.1);border:1px solid #f4e3e8}
 .cal .mon{font-family:var(--font-serif);font-size:22px;color:var(--rose-deep);margin-bottom:12px}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
 .cal-grid .wd{font-family:var(--font-sans);font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding-bottom:6px}
 .cal-grid .cd{position:relative;height:34px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#6c5a5f}
 .cal-grid .cd.empty{visibility:hidden}
 .cal-grid .cd.event{color:var(--rose-deep);font-weight:700}
-.cal-grid .cd.event svg{position:absolute;top:50%;left:50%;width:36px;height:33px;transform:translate(-50%,-52%);z-index:0}
+.cal-grid .cd.event svg{position:absolute;top:50%;left:50%;width:34px;height:36px;transform:translate(-50%,-56%);z-index:0}
 .cal-grid .cd.event span{position:relative;z-index:1}
 .cal-grid .cd.event em{position:absolute;top:calc(50% + 13px);left:50%;transform:translateX(-50%);z-index:1;font-style:normal;font-family:var(--font-sans);font-size:7.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--rose);white-space:nowrap;pointer-events:none}
 .cal-cap{font-family:var(--font-sans);font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
@@ -77,24 +77,24 @@ img{max-width:100%;display:block}
 
 /* ---------- Обратный отсчёт ---------- */
 .count{display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}
-.count .box{background:var(--card);border-radius:15px;padding:15px 6px;min-width:70px;box-shadow:0 8px 22px rgba(168,90,114,.10);border:1px solid #f0e2e6}
+.count .box{background:var(--card);border-radius:15px;padding:15px 6px;min-width:70px;box-shadow:0 8px 22px rgba(207,107,129,.1);border:1px solid #f4e3e8}
 .count .num{font-family:var(--font-serif);font-size:33px;font-weight:600;color:var(--rose-deep);line-height:1}
 .count .lbl{font-family:var(--font-sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 
 /* ---------- Карточки дата/место ---------- */
 .cards{display:grid;grid-template-columns:1fr;gap:16px}
-.info{background:var(--card);border-radius:18px;padding:24px 22px;box-shadow:0 8px 24px rgba(168,90,114,.08);border:1px solid #f2e6ea}
+.info{background:var(--card);border-radius:18px;padding:24px 22px;box-shadow:0 8px 24px rgba(207,107,129,.08);border:1px solid #f4e1e7}
 .info .ic{font-size:22px;color:var(--gold)}
 .info h3{font-family:var(--font-serif);font-weight:600;font-size:22px;margin:6px 0 2px}
 .info p{color:#6c5a5f;font-size:14.5px}
 .info .big{font-family:var(--font-serif);font-size:28px;color:var(--rose-deep);margin:2px 0}
 
 /* ---------- Карта ---------- */
-.map-frame{margin-top:18px;border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(168,90,114,.14);border:1px solid #f0e2e6}
+.map-frame{margin-top:18px;border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(207,107,129,.14);border:1px solid #f4e3e8}
 .map-frame iframe{width:100%;height:300px;border:0;display:block}
 .map-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
 .map-btns a{text-decoration:none;font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--rose-deep);background:#fff;border:1px solid var(--gold);border-radius:999px;padding:11px 20px;transition:all .2s}
-.map-btns a:hover{background:#fdf1f3;transform:translateY(-2px)}
+.map-btns a:hover{background:#fff5f7;transform:translateY(-2px)}
 
 /* ---------- Блок хозяев ---------- */
 #names{padding:25px 20px;text-align:center;position:relative;overflow:hidden}
@@ -106,18 +106,18 @@ img{max-width:100%;display:block}
 .rsvp-invite{margin-bottom:18px}
 .rsvp-invite .flower{font-size:30px;line-height:1}
 .rsvp-invite .rt{font-family:var(--font-serif);font-size:26px;color:var(--rose-deep);margin-top:4px}
-.rsvp-box{background:var(--card);border-radius:20px;padding:15px 15px;margin-top:16px;box-shadow:0 12px 30px rgba(168,90,114,.12);border:1px solid #f2e6ea}
+.rsvp-box{background:var(--card);border-radius:20px;padding:15px 15px;margin-top:16px;box-shadow:0 12px 30px rgba(207,107,129,.12);border:1px solid #f4e1e7}
 .rsvp-choices{display:flex;gap:12px}
-.rsvp-choices button{flex:1;cursor:pointer;font-family:var(--font-sans);font-size:15px;font-weight:600;padding:16px 10px;border-radius:14px;border:1.5px solid #ecd9de;background:#fff;color:var(--ink);transition:all .2s;line-height:1.3}
+.rsvp-choices button{flex:1;cursor:pointer;font-family:var(--font-sans);font-size:15px;font-weight:600;padding:16px 10px;border-radius:14px;border:1.5px solid #f0dbe2;background:#fff;color:var(--ink);transition:all .2s;line-height:1.3}
 .rsvp-choices button .em{font-size:18px}
 .rsvp-choices button.yes.sel{background:var(--rose);border-color:var(--rose);color:#fff}
 .rsvp-choices button.no.sel{background:#efe7ea;border-color:#d8c4cb}
 .rsvp-choices button:disabled{opacity:.55;cursor:default}
 .rsvp-form{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease,opacity .45s ease,margin .45s ease;margin-top:0}
 .rsvp-form.show{max-height:220px;opacity:1;margin-top:16px}
-.rsvp-form input{width:100%;font-family:var(--font-sans);font-size:16px;text-align:center;color:var(--ink);padding:15px 16px;border:1.5px solid #ecd9de;border-radius:12px;background:#fdfafb;outline:none;transition:border-color .2s}
+.rsvp-form input{width:100%;font-family:var(--font-sans);font-size:16px;text-align:center;color:var(--ink);padding:15px 16px;border:1.5px solid #f0dbe2;border-radius:12px;background:#fdfafb;outline:none;transition:border-color .2s}
 .rsvp-form input:focus{border-color:var(--rose)}
-.rsvp-form .send{width:100%;margin-top:12px;cursor:pointer;border:none;border-radius:12px;padding:15px;font-family:var(--font-sans);font-size:15px;font-weight:600;color:#fff;background:var(--rose);box-shadow:0 8px 20px rgba(193,112,134,.35);transition:transform .2s}
+.rsvp-form .send{width:100%;margin-top:12px;cursor:pointer;border:none;border-radius:12px;padding:15px;font-family:var(--font-sans);font-size:15px;font-weight:600;color:#fff;background:var(--rose);box-shadow:0 8px 20px rgba(229,143,160,.4);transition:transform .2s}
 .rsvp-form .send:hover{transform:translateY(-2px)}
 .rsvp-form .send:disabled{opacity:.6;transform:none;cursor:default}
 .rsvp-msg{margin-top:14px;font-family:var(--font-serif);font-size:19px;color:var(--rose-deep);min-height:24px}
@@ -132,7 +132,7 @@ img{max-width:100%;display:block}
 #footer p .dot{color:var(--gold)!important;font-size:20px;vertical-align:middle}
 
 /* ---------- Кнопка музыки ---------- */
-#music-btn{position:fixed;right:14px;bottom:14px;z-index:60;width:50px;height:50px;border-radius:50%;border:none;cursor:pointer;background:var(--rose);color:#fff;font-size:20px;box-shadow:0 8px 20px rgba(193,112,134,.45);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+#music-btn{position:fixed;right:14px;bottom:14px;z-index:60;width:50px;height:50px;border-radius:50%;border:none;cursor:pointer;background:var(--rose);color:#fff;font-size:20px;box-shadow:0 8px 20px rgba(229,143,160,.5);display:flex;align-items:center;justify-content:center;transition:transform .2s}
 #music-btn:hover{transform:scale(1.08)}
 #music-btn.playing{animation:spin 6s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -147,18 +147,19 @@ img{max-width:100%;display:block}
      ============================================================ -->
 <script>
 const CONFIG = {
-  // Дата и время торжества. Формат: ГОД-МЕСЯЦ-ДЕНЬTЧАС:МИНУТА (+05:00 — время Костаная)
-  eventDate: "2026-10-24T17:00:00+05:00",
-  // Год и месяц для календаря (месяц: 1=январь … 10=октябрь) и день торжества
+  // ★ Дата и время юбилея. Формат: ГОД-МЕСЯЦ-ДЕНЬTЧАС:МИНУТА (+05:00 — время Астаны).
+  // Пока оставлена прежняя дата — замени её на фактическую дату юбилея (и calYear/calMonth/calDay).
+  eventDate: "2026-11-05T16:00:00+05:00",
+  // Год, месяц (1=январь … 12=декабрь) и день для календаря — меняй вместе с eventDate
   calYear: 2026, calMonth: 10, calDay: 24,
 
-  // Google-таблица для ответов RSVP. Обычно менять не нужно.
-  rsvpUrl: "https://script.google.com/macros/s/AKfycbwmrieS3OR79MGTLwbj1wzq24SAKesIF011OenEh2Jvp_ZBbPjV2g-H6gbb_AuEa6JEQg/exec",
+  // Google-таблица для ответов RSVP. Создай свою таблицу по инструкции в README.md и вставь сюда новый /exec-URL.
+  rsvpUrl: "https://script.google.com/macros/s/AKfycbxzwUIpH2v2lrfITbMxQxEaloB6B980gvd5nU9_dSoF7gORJ5ylsqnpD9vzK5WP71puEg/exec",
 
   // Google Карты по адресу. Чтобы сменить место — поменяй адрес в обеих строках.
-  googleEmbed: "https://maps.google.com/maps?q=" + encodeURIComponent("улица Каирбекова 357/1, Костанай") + "&hl=ru&z=17&output=embed",
-  googleLink:  "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent("улица Каирбекова 357/1, Костанай"),
-  twogisLink:  "https://go.2gis.com/4QGh1",
+  googleEmbed: "https://maps.google.com/maps?q=" + encodeURIComponent("Жасмин тойханасы, Сәтбаев көшесі 23/3, Астана") + "&hl=ru&z=17&output=embed",
+  googleLink:  "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent("Астана, Сәтбаев көшесі 23/3"),
+  twogisLink:  "https://2gis.kz/astana/firm/70000001028127070",
 
   // Фоновая музыка (файл лежит в папке music/)
   music: "music/background.mp3"
@@ -171,17 +172,38 @@ const CONFIG = {
   <button class="b-ru" onclick="setLang('ru')">РУС</button>
 </div>
 
-<!-- ===== Кольца (картинку колец положи в images/rings.jpg — заменит эмблему) ===== -->
+<!-- ===== Эмблема (свою картинку положи в images/rings.jpg — она заменит шарики с «50») ===== -->
 <div class="rings" style="padding-top:56px">
   <img src="images/rings.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <svg viewBox="0 0 200 120" style="display:none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs><linearGradient id="gld" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e6c877"/><stop offset=".5" stop-color="#c9a24b"/><stop offset="1" stop-color="#b8862f"/>
-    </linearGradient></defs>
-    <circle cx="82" cy="66" r="34" fill="none" stroke="url(#gld)" stroke-width="6"/>
-    <circle cx="122" cy="66" r="34" fill="none" stroke="url(#gld)" stroke-width="6"/>
-    <path d="M122 20 l7 10 -7 10 -7 -10 z" fill="url(#gld)"/>
-    <circle cx="150" cy="30" r="2" fill="#e6c877"/><circle cx="60" cy="34" r="1.6" fill="#e6c877"/>
+  <svg viewBox="0 0 240 150" style="display:none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="gld" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f4c46e"/><stop offset=".5" stop-color="#e5b25c"/><stop offset="1" stop-color="#d19a3f"/>
+      </linearGradient>
+      <linearGradient id="gpnk" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f5a7b6"/><stop offset="1" stop-color="#e58fa0"/>
+      </linearGradient>
+      <linearGradient id="gblu" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#9dc9ee"/><stop offset="1" stop-color="#7fb4de"/>
+      </linearGradient>
+    </defs>
+    <circle cx="36" cy="34" r="2.6" fill="#e5b25c"/>
+    <circle cx="180" cy="30" r="2.6" fill="#e58fa0"/>
+    <circle cx="206" cy="52" r="2" fill="#7fb4de"/>
+    <circle cx="24" cy="104" r="2" fill="#7fb4de"/>
+    <circle cx="214" cy="96" r="2.4" fill="#e5b25c"/>
+    <path d="M204 14 l2.6 3 -0.6 3.9 3-2.6 3.4 2.6 -1-3.9 2.8-2.9 -3.8 0.4z" fill="#e5b25c"/>
+    <path d="M26 62 l2.2 2.6 -0.5 3.2 2.5-2.1 2.8 2.2 -0.9-3.2 2.3-2.4 -3.2 0.3z" fill="#e58fa0"/>
+    <path d="M96 118 l-5 9 5 5 5-5 -5-9z" fill="url(#gpnk)"/>
+    <path d="M96 118 l-3 6" stroke="#e5b25c" stroke-width="1.4" fill="none"/>
+    <ellipse cx="96" cy="72" rx="40" ry="42" fill="url(#gpnk)"/>
+    <path d="M66 66 a22 22 0 0 1 8-12" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>
+    <text x="96" y="84" text-anchor="middle" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#fff">50</text>
+    <path d="M178 106 l-4 8 4 4 4-4 -4-8z" fill="url(#gblu)"/>
+    <path d="M178 106 l-3 5" stroke="#7fb4de" stroke-width="1.3" fill="none" opacity=".8"/>
+    <ellipse cx="178" cy="78" rx="24" ry="26" fill="url(#gblu)"/>
+    <path d="M160 72 a14 14 0 0 1 5-8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".5"/>
+    <path d="M178 84 l-4 5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/>
   </svg>
 </div>
 
@@ -190,18 +212,22 @@ const CONFIG = {
   <div class="wrap reveal">
     <!-- КАЗАХСКИЙ ТЕКСТ (меняй тут) -->
     <p class="serif-body kz">
-      Құрметті ағайын-туыс, бауырлар, құда-жекжат, нағашы-жиен, бөлелер,
-      дос-жаран және әріптестер! Сіздерді қызымыздың <b>ұзату тойына</b>
-      арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз.
+      Құрметті ағайын-туыстар, құда-құдағилар, жора-жолдастар, әріптестер! 🩷💙
+    </p>
+    <p class="serif-body kz" style="margin-top:10px">
+      Сіздерді <b>50 жас мерейтойына</b> арналған ақ дастарханымыздың қадірлі
+      қонағы болуға қуана шақырамыз!
     </p>
     <!-- РУССКИЙ ТЕКСТ (меняй тут) -->
     <p class="serif-body ru">
-      Уважаемые родственники, сваты, близкие и друзья! Приглашаем вас на
-      <b>ұзату той</b> нашей дочери — стать почётными гостями нашего
-      праздничного белого дастархана.
+      Уважаемые родственники, сваты, дорогие друзья и коллеги! 🩷💙
     </p>
-    <!-- ИМЕНА ПАРЫ (меняй тут) -->
-    <div class="couple" style="margin-top:22px"> Диана</div>
+    <p class="serif-body ru" style="margin-top:10px">
+      С радостью приглашаем вас стать почётными гостями нашего белого дастархана,
+      накрытого в честь <b>50-летнего юбилея</b>!
+    </p>
+    <!-- ЮБИЛЯР (меняй тут): вместо «50 жас» можно вписать имя, например: <div class="couple" ...>Айгүл</div> -->
+    <div class="couple" style="margin-top:24px"><div class="couple" ...>Ақмарал</div><span class="kz">50 жас</span><span class="ru">50 лет</span></div>
   </div>
 </section>
 
@@ -211,12 +237,12 @@ const CONFIG = {
 <section class="section">
   <div class="wrap reveal">
     <div class="cal">
-      <div class="mon"><span class="kz">Қазан 2026</span><span class="ru">Октябрь 2026</span></div>
+      <div class="mon"></div>
       <div class="cal-grid" id="cal"></div>
-      <div class="cal-time"><span class="kz">🕔 Басталу — 17:00</span><span class="ru">🕔 Начало в 17:00</span></div>
+      <div class="cal-time"></div>
     </div>
 
-    <div class="kicker" style="margin-top:26px"><span class="kz">Тойға дейін</span><span class="ru">До торжества осталось</span></div>
+    <div class="kicker" style="margin-top:26px"><span class="kz">Мерейтойға дейін</span><span class="ru">До юбилея осталось</span></div>
     <div class="count" id="count">
       <div class="box"><div class="num" id="d">0</div><div class="lbl"><span class="kz">күн</span><span class="ru">дней</span></div></div>
       <div class="box"><div class="num" id="h">0</div><div class="lbl"><span class="kz">сағат</span><span class="ru">часов</span></div></div>
@@ -233,10 +259,10 @@ const CONFIG = {
   <div class="wrap reveal">
     <div class="cards" style="grid-template-columns:1fr">
       <div class="info">
-        <div class="ic">✦</div>
+        <div class="ic">🎈</div>
         <div class="kicker" style="margin-top:8px"><span class="kz">Мекенжай</span><span class="ru">Адрес</span></div>
-        <h3><span class="kz">«Сәтті» мейрамханасы</span><span class="ru">Ресторан «Сәтті»</span></h3>
-        <p><span class="kz">Қостанай қ., Қайырбеков көш. 357/1</span><span class="ru">г. Костанай, ул. Каирбекова 357/1</span></p>
+        <h3><span class="kz">«Жасмин» тойханасы</span><span class="ru">Тойхана «Жасмин»</span></h3>
+        <p><span class="kz">Астана қ., Сәтбаев көш. 23/3</span><span class="ru">г. Астана, ул. Сәтбаев 23/3</span></p>
       </div>
     </div>
   </div>
@@ -260,10 +286,11 @@ const CONFIG = {
 
 <div class="divider"><span class="ln"></span><span class="orn"><i></i><b>✦</b><i></i></span><span class="ln"></span></div>
 
-<!-- ===== 5. ХОЗЯЕВА ТОРЖЕСТВА ===== -->
+<!-- ===== 5. ЮБИЛЯР ===== -->
 <section id="names" class="reveal">
-  <div class="role"><span class="kz">Той иелері</span><span class="ru">Хозяева торжества</span></div>
-  <div class="nm">Талғат <span class="amp">&amp;</span> Ғалия</div>
+  <!-- ИМЯ ЮБИЛЯРА (меняй тут): вместо «50 жас мерейтойы» впиши имя, например: <div class="nm">Ақмарал</div> -->
+  <div class="role"><div class="nm">Ақмарал</div><span class="kz">Мерейтой иесі</span><span class="ru">Именинник</span></div>
+  <div class="nm"><div class="nm">Ақмарал</div><span class="kz">50 жас мерейтойы</span><span class="ru">50 лет — юбилей</span></div>
 </section>
 
 <div class="divider"><span class="ln"></span><span class="orn"><i></i><b>✦</b><i></i></span><span class="ln"></span></div>
@@ -274,11 +301,11 @@ const CONFIG = {
     <div class="kicker"><span class="kz">Қатысуыңызды растаңыз</span><span class="ru">Подтвердите присутствие</span></div>
     <div class="rsvp-box">
       <div class="rsvp-invite">
-        <div class="flower">🌸</div>
-        <div class="rt"><span class="kz">Сіздерді күтеміз</span><span class="ru">Мы вас ждём</span></div>
+        <div class="flower">🎂</div>
+        <div class="rt"><span class="kz">Сізді мерейтойда күтеміз!</span><span class="ru">Ждём вас на юбилее!</span></div>
       </div>
       <div class="rsvp-choices">
-        <button class="yes" onclick="choose(true,this)"><span class="em">🤍</span> <span class="kz">Келемін</span><span class="ru">Приду</span></button>
+        <button class="yes" onclick="choose(true,this)"><span class="em">🎉</span> <span class="kz">Келемін</span><span class="ru">Приду</span></button>
         <button class="no"  onclick="choose(false,this)"><span class="em">💔</span> <span class="kz">Келе алмаймын</span><span class="ru">Не смогу</span></button>
       </div>
       <div class="rsvp-form" id="rsvpForm">
@@ -294,9 +321,9 @@ const CONFIG = {
 
 <!-- ===== ПОДВАЛ ===== -->
 <footer id="footer">
-  <div class="lead"><span class="kz">Тойымыздың куәгері болыңыз</span><span class="ru">Будьте свидетелями нашего торжества</span></div>
-  <div class="fnames">Талғат <span class="amp">&amp;</span> Ғалия</div>
-  <p><span class="kz">Махаббатпен <span class="dot">•</span> қазан 2026</span><span class="ru">С любовью <span class="dot">•</span> октябрь 2026</span></p>
+  <div class="lead"><span class="kz">Мерейтойымыздың қадірлі қонағы болыңыз</span><span class="ru">Станьте почётным гостем нашего юбилея</span></div>
+  <div class="fnames"><span class="kz">50 жас мерейтойы</span><span class="ru">50 лет — юбилей</span></div>
+  <p><span class="kz">Қуанышпен <span class="dot">•</span> 2026</span><span class="ru">С радостью <span class="dot">•</span> 2026</span></p>
 </footer>
 
 <audio id="audio" loop preload="auto"></audio>
@@ -335,17 +362,24 @@ document.addEventListener('touchstart',_play, {once:true, passive:true});
 function buildCal(){
   const y=CONFIG.calYear, m=CONFIG.calMonth-1, day=CONFIG.calDay;
   const wdKz=['Дс','Сс','Ср','Бс','Жм','Сб','Жс'], wdRu=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+  const monKz=['қаңтар','ақпан','наурыз','сәуір','мамыр','маусым','шілде','тамыз','қыркүйек','қазан','қараша','желтоқсан'];
+  const monRu=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
   const cur=document.documentElement.getAttribute('data-lang');
   const wd=cur==='kz'?wdKz:wdRu;
+  // Заголовок месяца и время — автоматически из CONFIG (если поменяешь дату, здесь обновится само)
+  const mon=(cur==='kz'?monKz[m]:monRu[m]).replace(/^./,c=>c.toUpperCase())+' '+y;
+  document.querySelector('.cal .mon').textContent=mon;
+  const hm=String(CONFIG.eventDate).slice(11,16);
+  document.querySelector('.cal-time').textContent = cur==='kz' ? '🕔 Басталу — '+hm : '🕔 Начало в '+hm;
   const lead=(new Date(y,m,1).getDay()+6)%7;
   const days=new Date(y,m+1,0).getDate();
-  const heart='<svg viewBox="0 0 32 29"><path d="M16 27.5l-1.9-1.7C7.6 20 4 16.7 4 12.7 4 9.4 6.6 6.8 9.9 6.8c1.9 0 3.7.9 4.9 2.3l1.2 1.4 1.2-1.4c1.2-1.4 3-2.3 4.9-2.3 3.3 0 5.9 2.6 5.9 5.9 0 4-3.6 7.3-10.1 13.1L16 27.5z" fill="none" stroke="#c9a24b" stroke-width="1.6"/></svg>';
-  const cap = cur==='kz' ? 'той күні' : 'день торжества';
+  const balloon='<svg viewBox="0 0 34 40"><path d="M17 30l2.6 6M17 30l-2.6 6M17 36l1.8 4" stroke="#e5b25c" stroke-width="1.5" fill="none" stroke-linecap="round"/><ellipse cx="17" cy="14" rx="11.5" ry="14" fill="none" stroke="#e58fa0" stroke-width="1.6"/><path d="M8.5 11a8 8 0 0 1 2.6-4.4" stroke="#7fb4de" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>';
+  const cap = cur==='kz' ? 'мерейтой күні' : 'день юбилея';
   let h='';
   wd.forEach(w=>h+='<div class="wd">'+w+'</div>');
   for(let i=0;i<lead;i++) h+='<div class="cd empty"></div>';
   for(let d=1;d<=days;d++){
-    h += d===day ? '<div class="cd event">'+heart+'<span>'+d+'</span><em>'+cap+'</em></div>' : '<div class="cd">'+d+'</div>';
+    h += d===day ? '<div class="cd event">'+balloon+'<span>'+d+'</span><em>'+cap+'</em></div>' : '<div class="cd">'+d+'</div>';
   }
   document.getElementById('cal').innerHTML=h;
 }
@@ -388,7 +422,7 @@ function sendRsvp(){
   .then(r=>r.json())
   .then(()=>{ rsvpSent=true;
     document.querySelectorAll('.rsvp-choices button').forEach(b=>b.disabled=true);
-    msg.textContent = lang==='kz' ? 'Жауабыңызға рақмет! 🌸' : 'Спасибо за ответ! 🌸';
+    msg.textContent = lang==='kz' ? 'Жауабыңызға рақмет! 🎉' : 'Спасибо за ответ! 🎉';
   })
   .catch(()=>{ send.disabled=false;
     msg.innerHTML='<span class="rsvp-err">'+(lang==='kz'?'Қате шықты, қайталаңыз':'Ошибка, попробуйте ещё раз')+'</span>';
