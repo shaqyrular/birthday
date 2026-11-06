@@ -1,0 +1,16 @@
+# Не трогать бинарные файлы (иначе git может их повредить)
+*.mp3 binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+
+# HTML/CSS/JS — обычный текст с переводами строк LF
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
